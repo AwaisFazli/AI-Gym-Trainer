@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 
-import Navbar from "./Components/Navbar.js";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 const Signin = () => {
-  const Router = useRouter();
+
+  let history = useHistory();
 
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -22,7 +24,7 @@ const Signin = () => {
   };
 
   const routesignup = (e) => {
-    Router.push("/signup");
+    history.push("/signup");
   };
 
   const call = async () => {
@@ -36,8 +38,7 @@ const Signin = () => {
       return e.username;
     });
     if (pass[0] === password) {
-      <Navbar username={user} toggle={true} />;
-      Router.push("/");
+      history.push("/");
     } else {
       setshow(true);
     }
