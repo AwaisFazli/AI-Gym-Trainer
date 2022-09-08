@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        color: white;
+
+        margin: 0px;
+        padding: 0px;
+        /* background:rgba(0, 0,0, 0.7)url('1122.jpg'); */
+        font-family: "Bebas Neue", cursive;
+        /* background-size: cover; */
+        background-blend-mode: darken;
+      }
+      .left {
+        /* border: 2px solid green; */
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 28px;
+      }
+      .left img {
+        width: 85px;
+        filter: invert(100%);
+      }
+      .left div {
+        text-align: center;
+      }
+      .right {
+        display: inline-block;
+        /* border: 2px solid yellow; */
+        position: absolute;
+        right: 21px;
+        top: 15px;
+      }
+      .btn {
+        background-color: black;
+        color: white;
+        padding: 6px 14px;
+        margin: 0px 11px;
+        border: 2px solid gray;
+        border-radius: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: "Bebas Neue", cursive;
+      }
+      .center {
+position: absolute;
+left: 50%;
+top: 180vh;
+transform: translate(-50%, -50%);
+border: 2px solid ;
+border-radius: 10px;
+padding: 10px;
+}
+      /* .container {
+  
+      border: 8px Solid whitesmoke;
+      margin: 120px 63px;
+      padding: 14px;
+      width: 35%;
+      border-radius: 67px;
+      text-align: center;
+  
+  } */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="left">
+        <img src="1133.png" alt="" />
+        <div>AI Trainer</div>
+      </div>
+
+      <div class="right">
+        <a href="./aboutUs.html"><button class="btn">About us</button></a>
+        <a href="./contactUs.html"><button class="btn">Contact us</button></a>
+      </div>
+    </header>
+    <div class="w3-content w3-section">
+      <img
+        class="mySlides"
+        src="{{url_for('static', filename='2.png')}}"
+        align="middle"
+        width="100%"
+      />
+      <img
+        class="mySlides"
+        src="{{url_for('static', filename='3.png')}}"
+        align="middle"
+        width="100%"
+      />
+      <img
+        class="mySlides"
+        src="{{url_for('static', filename='4.png')}}"
+        align="middle"
+        width="100%"
+      />
+
+      <!-- <img class="mySlides" src="./2.png" width="100%" />
+      <img class="mySlides" src="./3.png" width="100%" />
+      <img class="mySlides" src="./4.png" width="100%" /> -->
+    </div>
+    <img src="{{url_for('static', filename='')}}"  />
+
+    <div class="center">
+      <img src="{{ url_for('video') }}" alt="" />
+    </div>
+
+    <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>
