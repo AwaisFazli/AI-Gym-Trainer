@@ -1,6 +1,7 @@
 # AI-Gym-Trainer
 
 ## Demo:
+This Demo is only the simulation of What does this system actually do. The Actual system is integrated with Webapp using Flask as a backend
 
 
 
